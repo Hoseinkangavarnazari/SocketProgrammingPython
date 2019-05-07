@@ -9,6 +9,7 @@ serverSocket.bind((HOST,PORT))
 
 while True:
     data, addr = serverSocket.recvfrom(1024)
-    modifiedData = data.upper()
-    print ("Message: ", data)
-    serverSocket.send(modifiedData,addr)
+    modifiedData = str(data.decode()).upper()
+    print ("Message: ", data.decode())
+    print(modifiedData)
+    serverSocket.sendto(modifiedData.encode(),addr)

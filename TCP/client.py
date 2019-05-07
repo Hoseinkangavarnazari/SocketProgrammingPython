@@ -2,7 +2,7 @@ import socket
 import sys
 
 SERVER_HOST = 'localhost'
-SERVER_PORT = 5000
+SERVER_PORT = 6000
 
 clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientSocket.connect((SERVER_HOST,SERVER_PORT))

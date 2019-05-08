@@ -3,8 +3,8 @@ import socket
 import sys
 
 # server address and port 
-serverAddrConst = 'localhost'
-serverPort = 4000
+serverAddrConst = '192.168.43.235'
+serverPort = 6000
 
 # AF_INET: we are using IPv4
 # Sock_DGRAM: UDP connection (Datagrams)

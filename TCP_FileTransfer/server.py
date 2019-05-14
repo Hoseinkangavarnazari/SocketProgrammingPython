@@ -3,12 +3,16 @@
 import socket
 import sys
 
+# Define a new socket with IPv4 / SOCK_STREAM (A.K.A TCP)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 
 HOST = "localhost"
-PORT = 9999
+PORT = 9998
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# binding the above configuration into the server
 s.bind((HOST, PORT))
+# listen to i client without accept until refusing another request
 s.listen(5)
 
 print("Listening ...")
@@ -22,6 +26,7 @@ while True:
     while True:
         # get file bytes, set the buffer size
         # receving files in 4096kb chunks
+        # i have changed the value but i didn't see noticiable change in it
         data = conn.recv(4096)
 
         # if there is nothing left to receive break the loop
@@ -29,10 +34,13 @@ while True:
             break
         # write bytes on file
         file.write(data)
+    # closing the file, from this line of code, it's safe to use the received file
     file.close()
     print("File Downloaded.")
 
     # close connection
     conn.close()
     print("Connection Closed")
+    
+    #  a clean exit without any errors
     sys.exit(0)

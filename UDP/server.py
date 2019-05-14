@@ -9,8 +9,8 @@ import sys
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
-HOST = 'localhost'
-PORT = 4000
+HOST = '192.168.43.56'
+PORT = 60000
 # Bind the address and port to socket
 serverSocket.bind((HOST, PORT))
 

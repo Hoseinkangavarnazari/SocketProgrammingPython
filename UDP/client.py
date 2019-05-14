@@ -12,6 +12,7 @@ serverPort = 6000
 clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 while True:
+    # new
     msg = input('input your sentence: ')
 
     # here the client port isn't important and OS handles Port itself
